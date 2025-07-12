@@ -26,10 +26,10 @@ public class PostCommandService(
             await postRepository.AddAsync(createdPost);
             await unitOfWork.CompleteAsync(); // Post ya tiene ID
 
-            // ✅ Agrega el ID del post al usuario
+            //  Agrega el ID del post al usuario
             user.PostsDone.Add(createdPost.Id);
-            userRepository.Update(user); // 👈 sin await
-            await unitOfWork.CompleteAsync(); // ✅ este sí se espera
+            userRepository.Update(user); 
+            await unitOfWork.CompleteAsync(); 
 
             return createdPost;
         }
@@ -45,12 +45,12 @@ public class PostCommandService(
         var post = await postRepository.FindByIdAsync(command.Id);
         if (post is null) return false;
 
-        // ✅ Buscar al usuario para eliminar el ID del post
+        // Buscar al usuario para eliminar el ID del post
         var user = await userRepository.FindByIdAsync(post.UserId);
         if (user != null)
         {
             user.PostsDone.PostIds.Remove(post.Id); // Eliminar el ID del post
-            userRepository.Update(user);            // 👈 sin await
+            userRepository.Update(user);         
         }
 
         postRepository.Delete(post);
