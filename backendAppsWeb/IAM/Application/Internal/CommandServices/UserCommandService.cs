@@ -4,7 +4,7 @@ using backendAppsWeb.IAM.Domain.Model.Commands;
 using backendAppsWeb.IAM.Domain.Model.ValueObjects;
 using backendAppsWeb.IAM.Domain.Repositories;
 using backendAppsWeb.IAM.Domain.Services;
-//using backendAppsWeb.Profile.Domain.Model.ValueObjects;
+
 using backendAppsWeb.Shared.Domain.Repositories;
 
 namespace backendAppsWeb.IAM.Application.Internal.CommandServices;
@@ -92,7 +92,7 @@ public class UserCommandService(
         return true;
     }
     
-    //deleted
+    
     public async Task<bool> Handle(DeleteLikePostCommand command)
     {
         var user = await userRepository.FindByIdAsync(command.UserId);
