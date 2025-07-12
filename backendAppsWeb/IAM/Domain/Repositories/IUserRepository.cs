@@ -7,7 +7,7 @@ public interface IUserRepository : IBaseRepository<User>
 {
     Task<User?> FindByUsernameAsync(string username);          
     bool ExistsByUsername(string username);                    
-    Task<List<int>> GetExistingUserIdsAsync(IEnumerable<int> ids); // ✔️ Verificación en bloque
+    Task<List<int>> GetExistingUserIdsAsync(IEnumerable<int> ids); 
     
     Task<User?> FindByIdAsync(int id);
 
