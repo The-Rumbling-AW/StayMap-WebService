@@ -14,7 +14,7 @@ public record ConcertResource
     VenueResource Venue,
     string Status, 
     List<int> Attendees,
-    string Platform // 👈 nuevo campo en la respuesta
+    string Platform 
     
     
 );
