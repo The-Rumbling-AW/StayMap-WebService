@@ -8510,11 +8510,11 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "D:\\BACKEnd\\backendAppsWebVersionFuncionapostssesupone\\backendAppsWeb\\backendAppsWeb\\backendAppsWeb.csproj",
+      "projectUniqueName": "C:\\Users\\User\\StayMap-WebService\\backendAppsWeb\\backendAppsWeb.csproj",
       "projectName": "backendAppsWeb",
-      "projectPath": "D:\\BACKEnd\\backendAppsWebVersionFuncionapostssesupone\\backendAppsWeb\\backendAppsWeb\\backendAppsWeb.csproj",
+      "projectPath": "C:\\Users\\User\\StayMap-WebService\\backendAppsWeb\\backendAppsWeb.csproj",
       "packagesPath": "C:\\Users\\User\\.nuget\\packages\\",
-      "outputPath": "D:\\BACKEnd\\backendAppsWebVersionFuncionapostssesupone\\backendAppsWeb\\backendAppsWeb\\obj\\",
+      "outputPath": "C:\\Users\\User\\StayMap-WebService\\backendAppsWeb\\obj\\",
       "projectStyle": "PackageReference",
       "configFilePaths": [
         "C:\\Users\\User\\AppData\\Roaming\\NuGet\\NuGet.Config"
