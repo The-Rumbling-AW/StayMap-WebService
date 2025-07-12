@@ -16,12 +16,10 @@ public class CommunityCommandService(
     {
         var createdCommunity = new Community(
             command.Name,
-        //    command.MemberQuantity,
+       
             command.Image,
             command.Description
-        //    command.Tags,
-            //command.Members
-           
+     
         );
 
         try
@@ -32,7 +30,7 @@ public class CommunityCommandService(
         }
         catch (Exception ex)
         {
-            // log opcional: Console.WriteLine(ex.Message);
+    
             return null;
         }
     }
@@ -54,7 +52,7 @@ public class CommunityCommandService(
         if (community == null) return false;
 
         if (community.UserLinks.Any(link => link.UserId == command.UserId))
-            return false; // ya está unido
+            return false; 
 
         community.UserLinks.Add(new CommunityMember
         {
@@ -71,7 +69,7 @@ public class CommunityCommandService(
         if (community == null) return false;
 
         var existingLink = community.UserLinks.FirstOrDefault(link => link.UserId == command.UserId);
-        if (existingLink == null) return false; // No estaba unido
+        if (existingLink == null) return false; 
 
         community.UserLinks.Remove(existingLink);
         await communityRepository.UpdateAsync(community);
