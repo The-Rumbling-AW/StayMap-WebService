@@ -4,8 +4,6 @@ using backendAppsWeb.Concerts.Domain.Model.Entity;
 using backendAppsWeb.IAM.Domain.Model.Entity;
 using backendAppsWeb.IAM.Domain.Model.ValueObjects;
 
-
-
 namespace backendAppsWeb.IAM.Domain.Model.Aggregate;
 
 
@@ -13,22 +11,17 @@ public class User
 {
     public int Id { get; private set; }
 
-    // Credenciales
     public string Username { get; private set; }
     
     [JsonIgnore]
     public string PasswordHash { get; private set; }
 
-    // Información de perfil
     public string Name { get; private set; }
     public EmailAddress Email { get; private set; }
     public string ProfileImage { get; private set; }
     public ProfileType Type { get; private set; }
     
     public LikedPosts LikedPosts { get; private set; }
-
-
-    // Value Objects del dominio
 
     
     public ICollection<ConcertAttendee> ConcertLinks { get; set; } = new List<ConcertAttendee>();
@@ -38,11 +31,9 @@ public class User
     
     public PostsDone PostsDone { get; private set; }
 
-    // Fan o Artist (según tipo)
     public Fan? Fan { get; private set; }
     public Artist? Artist { get; private set; }
 
-    // Constructor sin parámetros (EF Core)
     private User() {}
 
     public User(string username, string passwordHash, string name, EmailAddress email, string profileImage, ProfileType type)
@@ -59,7 +50,7 @@ public class User
 
 
         PostsDone = new PostsDone(new());
-        LikedPosts = new LikedPosts(new()); // ← ✅ FALTA ESTO
+        LikedPosts = new LikedPosts(new());
 
         if (type == ProfileType.Fan)
             Fan = new Fan();
