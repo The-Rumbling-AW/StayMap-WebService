@@ -13,6 +13,6 @@ public record CreateConcertCommand(
     double Latitude, 
     double Longitude, 
     int Capacity,
-    List<int>? Attendees, // ✅ Se agrega aquí
-    string Platform // 👈 nuevo
+    List<int>? Attendees, 
+    string Platform 
 );
