@@ -55,7 +55,7 @@ builder.Services.AddSwaggerGen(options =>
 {
     options.SwaggerDoc("v1", new OpenApiInfo
     {
-        Title = "CatchUp Platform API",
+        Title = "StayMap Web API",
         Version = "v1",
         Description = "API for managing favorite sources in CatchUp Platform"
     });
